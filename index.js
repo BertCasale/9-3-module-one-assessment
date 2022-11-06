@@ -77,7 +77,27 @@ function getHighestMetascore(movies) {
  *  getAverageIMDBRating(movies);
  *  //> 7.76
  */
-function getAverageIMDBRating() {}
+function getAverageIMDBRating(movies) {
+  //create a variable for the rating
+  let averageRating = 0;
+  //create a counter variable
+  let count = 0;
+  //loop through the movie array
+  while (count < movies.length){
+    //add the movies score to the average variable
+    averageRating += Number(movies[count].imdbRating);
+    //add to the counter
+    count ++;
+  }
+  //if there was at least one movie
+  if (count > 0){
+    //divide the number of movies from the average variable
+    averageRating = averageRating / count;
+  }
+  
+  //return the average
+  return averageRating;
+}
 
 /**
  * countByRating()
