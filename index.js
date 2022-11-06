@@ -242,7 +242,7 @@ function getAllMoviesReleasedAtOrBeforeYear(movies, year) {
  *  //> "Incredibles 2"
  */
 function getBiggestBoxOfficeMovie(movies) {
-  //create a variable for the biggest box office movie
+  //create a variable for the biggest box office movies title, null if movies array is empty
   let biggestBoxOffice = null;
   //create a variable for the value of the money made by the biggest box office movie
   let biggestDollar = 0;
@@ -253,7 +253,7 @@ function getBiggestBoxOfficeMovie(movies) {
     if (biggestDollar < Number(movie.boxOffice.slice(1).split(",").join(""))){
       //biggest dollar amount is now of that movie
       biggestDollar = Number(movie.boxOffice.slice(1).split(",").join(""));
-      //biggest Box office movie is now the current movie
+      //biggest Box office variable is now the current movies title
       biggestBoxOffice = movie.title;
     }
   }
